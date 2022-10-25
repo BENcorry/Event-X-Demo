@@ -6,8 +6,17 @@
 
 ## 依赖安装和运行
 
-```
+项目整体管理依赖于 lerna，使用 lerna 命令去安装和启动项目
 
+```
+# 安装依赖
+npm run install
+
+# 启动
+npm run start
+
+# 打包
+npm run build
 ```
 
 ## 技术选型
@@ -81,7 +90,5 @@ module.exports = {
 1. 如果需要动态的进行交互可以通过建立 webSocket 服务在数据更新是，更新到客户端
 2. 用户手动刷新发送 HTTP 请求刷新页面
 3. 客户端短轮询请求 API
-
-####
 
 ## 测试

@@ -1,15 +1,16 @@
-import { Module, CacheModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { ScheduleModule } from '@nestjs/schedule';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 
 import { TasksModule } from '../Tasks/tasks.module';
 import { CurrencyModule } from '../Currency/currency.module';
 import { ResponseInterceptor } from '../../commons/interceptor/ResponseInterceprot';
+import { CustomerCacheModule } from '../Cache/cache.module';
 
 @Module({
   imports: [
-    CacheModule.register(),
     ScheduleModule.forRoot(),
+    CustomerCacheModule,
     TasksModule,
     CurrencyModule,
   ],

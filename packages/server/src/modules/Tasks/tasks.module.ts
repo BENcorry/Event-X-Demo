@@ -1,18 +1,10 @@
-import { Module, CacheModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { HttpModule } from '@nestjs/axios';
+import { CustomerCacheModule } from '../Cache/cache.module';
 import { TasksServices } from './tasks.service';
-import { COIN_API_KEY } from '../../constants';
 
 @Module({
-  imports: [
-    CacheModule.register(),
-    HttpModule.register({
-      url: `https://rest.coinapi.io/`,
-      headers: {
-        'X-CoinAPI-Key': COIN_API_KEY,
-      },
-    }),
-  ],
+  imports: [CustomerCacheModule, HttpModule.register({})],
   providers: [TasksServices],
 })
 export class TasksModule {}

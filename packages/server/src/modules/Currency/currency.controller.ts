@@ -7,7 +7,6 @@ export class CurrencyController {
 
   @Get('list')
   async getHello() {
-    console.log('222222');
     const res = await this.currencyService.getCurrencyList();
     return res;
   }

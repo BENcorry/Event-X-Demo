@@ -1,9 +1,10 @@
-import { Module, CacheModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { CurrencyService } from './currency.service';
 import { CurrencyController } from './currency.controller';
+import { CustomerCacheModule } from '../Cache/cache.module';
 
 @Module({
-  imports: [CacheModule.register()],
+  imports: [CustomerCacheModule],
   controllers: [CurrencyController],
   providers: [CurrencyService],
 })
